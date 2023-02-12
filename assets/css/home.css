@@ -24,6 +24,7 @@ input[type="file"] {
     padding: 10px;
     font-size: 16px;
     border: 1px solid gray;
+    background-color: aliceblue;
     border-radius: 5px;
 }
 
@@ -41,15 +42,28 @@ input[type="submit"] {
     flex-direction: column;
     align-items: center;
     padding: 20px;
+    width: 20vw;
+    margin:10vh auto;
+    background-color: rgba(4, 4, 87, 0.5);
 }
 
 #fileLists a {
     margin-bottom: 10px;
     font-size: 16px;
     text-decoration: none;
+    
+}
+
+#fileLists a {
+    margin-bottom: 10px;
+}
+
+#fileLists  a:nth-child(odd) {
+    background-color: #f2f2f2;
     color: blue;
 }
 
-#fileLists div {
-    margin-bottom: 10px;
+#fileLists  a:nth-child(even) {
+    background-color: #8685ab;
+    color: white;
 }

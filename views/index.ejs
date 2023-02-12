@@ -3,10 +3,40 @@
 
 <head>
     <title>CSV Files</title>
-    <link rel="stylesheet" href="/css/home.css"
-</head>
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.js"></script>
+    </head>
 
 <body>
+
+  <% if (errorMessage) { %>
+    <script>
+      new Noty({
+        type: 'error',
+        layout: 'topRight',
+        text: '<%= errorMessage %>',
+        timeout: 1500,
+        callbacks: {
+          afterClose: function() {
+            window.location.href = '/';
+          }
+        }
+      }).show();
+    </script>
+  <% } %>
+
+  <% if (successMessage) { %>
+    <script>
+      new Noty({
+        type: 'success',
+        layout: 'topRight',
+        text: '<%= successMessage %>',
+        timeout: 1500
+      }).show();
+    </script>
+  <% } %>  
+
     <h1>CSV Files</h1>
     <form action="/upload" method="post" enctype="multipart/form-data">
         <input type="file" name="csvFile" accept=".csv" required>
@@ -15,7 +45,6 @@
     <br />
     <br />
     <%- include('_list_files') -%>
-    <script src="/js/home.js"></script>
 </body>
 
 </html>

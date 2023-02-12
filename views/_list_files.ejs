@@ -1,11 +1,9 @@
 <div id = "fileLists">
     <% if(fileNames.length > 0) { %>
       <% fileNames.forEach(function(file) { %>
-        <div>
           <a href="#" onclick="location.href='/display/<%= file.filename %>'">
             <%= file.filename %>
           </a>
-        </div>
       <% }); %>
     <% } else { %>
       <div>
