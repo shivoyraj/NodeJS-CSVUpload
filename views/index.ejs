@@ -12,16 +12,14 @@
         <input type="submit" value="Upload">
       </form>
       
-    <!-- <form action="/upload" method="post" enctype="multipart/form-data">
-        <input id="fileInput" name="csv" style="cursor: pointer" type="file" class="d-none custom-file-input"
-            onchange="uploadFile()" accept=".csv" multiple required />
-        <label class="custom-file-label" for="fileInput">Drag and drop <b>.csv</b> files here or click to browse</label>
-        <button type="submit" class="btn btn-dark btn-sm">
-            Upload File
-        </button>
-    </form> -->
+      <%- include('_list_files') -%>
+
     <br />
     <br />
+
+    
+
+    <script src="/js/script.js"></script>
 </body>
 
 </html>

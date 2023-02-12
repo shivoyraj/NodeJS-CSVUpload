@@ -1,6 +1,17 @@
 const CSVToJSON = require('csvtojson');
 const CSV = require('../models/csv');
 
+exports.getCSVByName = async function (req, res) {
+  try {
+    const fileData = await CSV.findOne({ filename: req.params.fileName });
+    return res.render('display_csv', {
+      data: fileData.data
+    });
+  } catch (error) {
+    console.error("Error occuered while CSV data : ", error);
+  }
+}
+
 exports.uploadCSV = async function (req, res) {
 
   const file = req.files.csvFile;
@@ -21,6 +32,9 @@ exports.uploadCSV = async function (req, res) {
   return res.redirect('back');
 }
 
-exports.home = ((req, res) => {
-  return res.render('index.ejs');
-})
+exports.home = async function (req, res) {
+  const allFilenames = await CSV.find({}, { filename: 1 });
+  return res.render('index.ejs', {
+    fileNames: allFilenames
+  });
+}
