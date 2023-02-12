@@ -1,3 +1,4 @@
+// for order any col in asc or desc order
 $(document).ready(function () {
     $("th").click(function () {
         var table = $(this).parents("table");
@@ -19,3 +20,25 @@ $(document).ready(function () {
         };
     }
 });
+
+//for adding search functionality on first column
+$(document).ready(function() {
+    // Search input keyup event handler
+    $("#searchInput").keyup(function() {
+      // Get the value of the search input
+      var searchValue = $(this).val().toLowerCase();
+
+      // Show all rows if search input is empty
+      if (!searchValue) {
+        $("#dataTable tbody tr").show();
+      } else {
+        // Hide all rows
+        $("#dataTable tbody tr").hide();
+
+        // Show the rows that match the search criteria
+        $("#dataTable tbody tr").filter(function() {
+          return $(this).find("td:first").text().toLowerCase().indexOf(searchValue) > -1;
+        }).show();
+      }
+    });
+  });

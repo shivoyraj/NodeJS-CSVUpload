@@ -13,8 +13,16 @@ h1{
     background-color: rgba(4, 4, 87, 0.5);
 }
 
+#searchInput{
+    margin-top: 7vh;
+    margin-left: 44vw;
+    border-radius: 10px;
+    height: 30px;
+    background-color: aliceblue;
+}
+
 #tableData {
-    margin: 8vh auto;
+    margin: 1vh auto;
     max-width: 80vw;
     max-height: 70vh;
     overflow-y: auto;
@@ -68,7 +76,9 @@ tr:nth-child(odd) {
     color: aliceblue;
 }
 
-a{
-    margin-left: 45vw;
+a{  
+    position: absolute;
+    left: 45vw;
+    top : 95vh;
     color: #000;
 }
