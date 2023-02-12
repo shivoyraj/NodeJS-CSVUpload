@@ -15,8 +15,9 @@ h1{
 
 #searchInput{
     margin-top: 7vh;
-    margin-left: 44vw;
+    margin-left: 42vw;
     border-radius: 10px;
+    width: 15vw;
     height: 30px;
     background-color: aliceblue;
 }
