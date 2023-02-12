@@ -3,6 +3,7 @@
 
 <head>
     <title>CSV Files</title>
+    <link rel="stylesheet" href="/css/home.css"
 </head>
 
 <body>
@@ -10,16 +11,11 @@
     <form action="/upload" method="post" enctype="multipart/form-data">
         <input type="file" name="csvFile" accept=".csv" required>
         <input type="submit" value="Upload">
-      </form>
-      
-      <%- include('_list_files') -%>
-
+     </form> 
     <br />
     <br />
-
-    
-
-    <script src="/js/script.js"></script>
+    <%- include('_list_files') -%>
+    <script src="/js/home.js"></script>
 </body>
 
 </html>
