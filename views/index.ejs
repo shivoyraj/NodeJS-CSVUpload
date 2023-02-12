@@ -32,7 +32,12 @@
         type: 'success',
         layout: 'topRight',
         text: '<%= successMessage %>',
-        timeout: 1500
+        timeout: 1500,
+        callbacks: {
+          afterClose: function() {
+            window.location.href = '/';
+          }
+        }
       }).show();
     </script>
   <% } %>  
