@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,24 +8,34 @@
   <link rel="stylesheet" href="/css/display.css">
   <title>CSV Table</title>
 </head>
+
 <body>
+  <h1>
+    <%= fileName %>
+  </h1>
   <div id="tableData">
     <table>
       <thead>
         <% for (var key in data[0]) { %>
-          <th><%= key %></th>
-        <% } %>
+          <th>
+            <%= key %>
+          </th>
+          <% } %>
       </thead>
       <tbody>
         <% Object.values(data).forEach(function(row) { %>
           <tr>
             <% for (var key in row) { %>
-              <td><%= row[key] %></td>
-            <% } %>
+              <td>
+                <%= row[key] %>
+              </td>
+              <% } %>
           </tr>
-        <% }); %>
+          <% }); %>
       </tbody>
-    </table>    
-</div>
+    </table>
+  </div>
+  <a href="#" onclick="location.href='/'">Back to HomePage</a>
 </body>
+
 </html>
