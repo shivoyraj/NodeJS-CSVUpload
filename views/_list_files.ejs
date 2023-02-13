@@ -1,13 +1,15 @@
 <div id = "fileLists">
-    <% if(fileNames.length > 0) { %>
-      <% fileNames.forEach(function(file) { %>
-          <a href="#" onclick="location.href='/display/<%= file.filename %>'">
-            <%= file.filename %>
-          </a>
-      <% }); %>
-    <% } else { %>
-      <div id = "EmptyDB">
-        <%= "No Files are uploaded" %>
-      </div>
-    <% } %>
+  <% if(fileNames.length > 0) { %>
+    <!-- loop through all the file names and create a link for each -->
+    <% fileNames.forEach(function(file) { %>
+        <a href="#" onclick="location.href='/display/<%= file.filename %>'">
+          <%= file.filename %>
+        </a>
+    <% }); %>
+  <% } else { %>
+    <!-- show this message when there are no files in the database -->
+    <div id = "EmptyDB">
+      <%= "No Files are uploaded" %>
+    </div>
+  <% } %>
 </div>

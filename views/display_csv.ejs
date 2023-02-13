@@ -14,20 +14,25 @@
   <h1>
     <%= fileName %>
   </h1>
+  <!-- Search bar to search based on the first column of the csv file -->
   <input type="text" id="searchInput" placeholder="Search based on <%= Object.keys(data[0])[0] %> column...">
   <div id="tableData">
     <table id="dataTable">
+      <!-- Table header with the column names -->
       <thead>
         <% for (var key in data[0]) { %>
           <th>
             <%= key %>
+            <!-- Sort icon for sorting the column data -->
             <img src="https://en.wikipedia.org/w/resources/src/jquery.tablesorter.styles/images/sort_both.svg?0e440">
           </th>
           <% } %>
       </thead>
+      <!-- Table body with the csv data -->
       <tbody>
         <% Object.values(data).forEach(function(row) { %>
           <tr>
+            <!-- Display the values of each row -->
             <% for (var key in row) { %>
               <td>
                 <%= row[key] %>
@@ -38,7 +43,9 @@
       </tbody>
     </table>
   </div>
+  <!-- Link to go back to the home page -->
   <a href="#" onclick="location.href='/'">Back to HomePage</a>
+  <!-- Script to handle the search and sorting functionality -->
   <script src="/js/display.js"></script>
 </body>
 </html>
